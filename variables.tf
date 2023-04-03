@@ -13,3 +13,8 @@ variable "environment" {
   description = "What environment you will be deploying to."
   default = "production"
 }
+
+variable "region" {
+  description = "The region where the resources are created."
+  default     = "us-east-1"
+}
