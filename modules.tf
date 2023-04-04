@@ -1,13 +1,13 @@
 module "s3_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-  version = "3.5.0"
+  source = "app.terraform.io/Troy/s3-bucket/aws"
+  version = "3.8.2"
   bucket = "${var.prefix}-myapp-bucket-${var.environment}"
   acl    = "private"
 }
 
 module "security-group" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "4.15.0"
+  source  = "app.terraform.io/Troy/security-group/aws"
+  version = "3.0.1"
   vpc_id = module.vpc.vpc_id
   name        = "test-sg"
   ingress_cidr_blocks      = ["10.10.0.0/16"]
@@ -28,8 +28,8 @@ module "security-group" {
 }
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "3.15.0"
+  source  = "app.terraform.io/Troy/vpc/aws"
+  version = "2.6.0"
   name = "test-vpc"
   cidr = "10.0.0.0/16"
 
