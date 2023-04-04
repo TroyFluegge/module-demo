@@ -29,7 +29,7 @@ module "security-group" {
 
 module "vpc" {
   source  = "app.terraform.io/Troy/vpc/aws"
-  version = "3.19.0"
+  version = "3.18.0"
   name = "test-vpc"
   cidr = "10.0.0.0/16"
 
